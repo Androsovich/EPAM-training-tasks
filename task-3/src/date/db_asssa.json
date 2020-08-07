@@ -1,0 +1,13 @@
+{
+  "transactions": [
+    {"id": 100, "date": "2007-04-12", "creditId": 6, "money": 1400},
+    {"id": 200, "date": "2007-04-12", "creditId": 4, "money": 2400},
+    {"id": 300, "date": "2007-04-12", "creditId": 7, "money": 3400}
+
+  ],
+  "werty": {
+    "sart" : 5
+  },
+  "ser": null
+
+}

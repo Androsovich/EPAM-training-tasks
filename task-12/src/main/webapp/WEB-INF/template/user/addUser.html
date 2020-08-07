@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>welcome page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<div>
+    <a th:href="@{/j_spring_security_logout}">logout</a>
+    <a th:href="@{/}">Main</a>
+</div>
+<div>
+    <form action="#" th:action="@{/security/addUser}" th:object="${user}" method="post">
+        <table style="background:#ccc">
+            <tr>
+                <td><label th:for="*{name}">Name</label>:</td>
+                <td><input type="text" th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td><label th:for="*{surName}">Surname</label>:</td>
+                <td><input type="text" th:field="*{surName}"/></td>
+            </tr>
+            <tr>
+                <td><label th:for="*{address}">Address</label></td>
+                <td><input type="text" th:field="*{address}"/></td>
+            </tr>
+            <tr>
+                <td><label th:for="*{phone}">Phone</label>:</td>
+                <td><input type="text" th:field="*{phone}"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="add user"/>
+    </form>
+</div>
+</body>
+</html>

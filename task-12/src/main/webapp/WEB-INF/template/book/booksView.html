@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>welcome page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<div>
+    <a th:href="@{/j_spring_security_logout}" >logout</a>
+    <a th:href="@{/}">Main</a>
+    <div>
+        <table>
+            <thead>
+            <caption><strong>list Books</strong></caption>
+
+            <tr>
+                <th>Book Id</th>
+                <th>Name</th>
+                <th>Publication date</th>
+                <th>Amount</th>
+                <th colspan="2">Author</th>
+            </tr>
+            </thead>
+            <tbody style="background:#ccc">
+            <div th:each="books : ${mapBooks}">
+                <tr>
+                    <td><strong th:text="${books.key.id}"></strong></td>
+                    <td><strong th:text="${books.key.name}"></strong></td>
+                    <td><strong th:text="${books.key.publicationDate}"></strong></td>
+                    <td><strong th:text="${books.key.amount}"></strong></td>
+                    <td><strong th:text="${books.value.name}"></strong></td>
+                    <td><strong th:text="${books.value.surName}"></strong></td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</body>
+</html>

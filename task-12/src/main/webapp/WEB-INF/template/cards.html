@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>welcome page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<div>
+    <a th:href="@{/j_spring_security_logout}">logout</a>
+    <a th:href="@{/user/booksView}">Books</a>
+    <table class="table">
+        <thead>
+        <caption class="cap">list of cards in the library</caption>
+
+        <tr>
+            <th>Id Card</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Create Date</th>
+            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <th colspan="1">manage books</th>
+                <th colspan="2">edit user</th>
+            </div>
+
+        </tr>
+        </thead>
+        <tbody style="background:#ccc">
+        <div th:each="cardUser:${cardUsers}">
+            <tr>
+                <td><a href="/user/userview" th:href="@{/user/userView(cardId=${cardUser.card.id})}"><span
+                        th:text="${cardUser.card.id}"></span></a></td>
+                <td><span th:text="${cardUser.user.name}"></span></td>
+                <td><span th:text="${cardUser.user.surName}"></span></td>
+                <td><span th:text="${cardUser.user.address}"></span></td>
+                <td><span th:text="${cardUser.user.phone}"></span></td>
+                <td><span th:text="${cardUser.card.createDate}"></span></td>
+                <div sec:authorize="hasRole('ROLE_ADMIN')">
+                    <td><a th:href="@{/security/add/book(cardId=${cardUser.card.id})}">add book</a></td>
+                    <td><a th:href="@{/security/user/editView(userId=${cardUser.user.id})}">edit</a></td>
+                    <td><a th:href="@{/security/user/delete(userId=${cardUser.user.id})}">delete</a></td>
+                </div>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <p><a th:href="@{/security/user/add}">Add new user</a></p>
+    </div>
+</div>
+</body>
+</html>

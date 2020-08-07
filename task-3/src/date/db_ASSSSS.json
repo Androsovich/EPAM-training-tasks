@@ -1,0 +1,89 @@
+gomel{
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2010-06-12",
+      "creditId": 1,
+      "money": 15000
+    },
+    {
+      "id": 1,
+      "date": "2010-07-10",
+      "creditId": 1,
+      "money": 10000
+    },
+    {
+      "id": 1,
+      "date": "2010-08-09",
+      "creditId": 1,
+      "money": 9000
+    },
+    {
+      "id": 1,
+      "date": "2010-09-11",
+      "creditId": 1,
+      "money": 30000
+    },{
+      "id": 1,
+      "date": "2010-10-11",
+      "creditId": 1,
+      "money": 11000
+    },{
+      "id": 1,
+      "date": "2010-11-11",
+      "creditId": 1,
+      "money": 10000
+    },{
+      "id": 1,
+      "date": "2011-01-21",
+      "creditId": 10,
+      "money": 1000
+    },{
+      "id": 1,
+      "date": "2011-01-23",
+      "creditId": 10,
+      "money": 3000
+    },{
+      "id": 1,
+      "date": "2011-01-24",
+      "creditId": 10,
+      "money": 5000
+    },{
+      "id": 1,
+      "date": "2011-01-25",
+      "creditId": 10,
+      "money": 2000
+    }
+  ]
+}
+minsk{"transactions":[
+  {
+    "id": 1,
+    "date": "2016-04-01",
+    "creditId": 2,
+    "money": 20000
+  },
+  {
+    "id": 1,
+    "date": "2016-04-01",
+    "creditId": 2,
+    "money": 24000
+  },
+  {
+    "id": 1,
+    "date": "2014-05-07",
+    "creditId": 4,
+    "money": 30000
+  },
+  {
+    "id": 1,
+    "date": "2015-06-07",
+    "creditId": 4,
+    "money": 40000
+  }, {
+    "id": 1,
+    "date": "2016-06-08",
+    "creditId": 4,
+    "money": 20000
+  }
+]}

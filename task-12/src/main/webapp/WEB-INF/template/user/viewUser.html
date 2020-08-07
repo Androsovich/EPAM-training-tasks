@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>welcome page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<div>
+    <a th:href="@{/j_spring_security_logout}">logout</a>
+    <a th:href="@{/}">Main</a>
+
+    <div th:object="${userInfo}">
+        <table>
+            <tbody style="background:#ccc">
+            <tr>
+                <td><strong>Id User: </strong>
+                </td>
+                <td>
+                    <strong th:text="${userInfo.user.id}"></strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Id Card: </strong>
+                </td>
+                <td>
+                    <strong th:text="${userInfo.cardId}"></strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Name: </strong>
+                </td>
+                <td>
+                    <strong th:text="${userInfo.user.name}"></strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Surname: </strong>
+                </td>
+                <td>
+                    <strong th:text="${userInfo.user.surName}"></strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Address: </strong>
+                </td>
+                <td>
+                    <strong th:text="${userInfo.user.address}"></strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Phone: </strong>
+                </td>
+                <td>
+                    <strong th:text="${userInfo.user.phone}"></strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <table>
+                <thead>
+                <caption><strong>list delivery books</strong></caption>
+
+                <tr>
+                    <th>Date extradition</th>
+                    <th>Date delivery</th>
+                    <th>Book</th>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')">
+                        <th>Delivery book</th>
+                    </div>
+                </tr>
+                </thead>
+                <tbody style="background:#ccc">
+                <div th:each="deliveryBook : ${userInfo.deliveryBookMap}">
+                    <tr>
+                        <td><strong th:text="${deliveryBook.key.dateExtradition}"></strong></td>
+                        <td><strong th:text="${deliveryBook.key.dateDelivery}"></strong></td>
+                        <td><strong th:text="${deliveryBook.value.name}"></strong></td>
+                        <div sec:authorize="hasRole('ROLE_ADMIN')">
+                            <td><a th:href="@{/security/delivery(deliveryId=${deliveryBook.key.id}, bookId=${deliveryBook.value.id})}" th:text="delivery"></a>
+                            </td>
+                        </div>
+                    </tr>
+                </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

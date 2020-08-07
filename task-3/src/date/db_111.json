@@ -1,0 +1,13 @@
+{
+  "transactions": [
+    {"id": 11, "date": "2007-04-12", "creditId": 6, "money": 1400},
+    {"id": 222, "date": "2007-04-12", "creditId": 4, "money": 2400},
+    {"id": 2222, "date": "2007-04-12", "creditId": 7, "money": 3400}
+
+  ],"collors": [
+  {"id": 22111, "date": "2007-04-12", "creditId": 10, "money": 1400},
+  {"id": 32111, "date": "2007-04-12", "creditId": 29, "money": 2400},
+  {"id": 222111, "date": "2007-04-12", "creditId": 76, "money": 3400}
+
+]
+}

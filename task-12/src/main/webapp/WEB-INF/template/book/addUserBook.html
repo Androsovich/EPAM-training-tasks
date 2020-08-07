@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>welcome page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<div th:object="${userInfo}">
+    <a th:href="@{/j_spring_security_logout}">logout</a>
+    <a th:href="@{/}">Main</a>
+    <p>User name: <strong th:text="${userInfo.user.name}"></strong>.</p>
+    <div th:object="${books}">
+        <table>
+            <thead>
+            <caption><strong>list books</strong></caption>
+            <tr>
+                <th>Book Name</th>
+            </tr>
+            </thead>
+            <tbody style="background:#ccc">
+            <div th:each="book : ${books}">
+                <tr>
+                    <td>
+                        <a th:href="@{/security/add/addBook(cardId=${userInfo.cardId},bookId=${book.id})}">
+                            <strong th:text="${book.name}"></strong>
+                        </a>
+                    </td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
